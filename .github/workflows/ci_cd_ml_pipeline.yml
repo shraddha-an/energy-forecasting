@@ -34,6 +34,8 @@ jobs:
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
           command: >
-            cd ~/energy-forecasting && 
-            git pull && 
+            cd ~/energy-forecasting
+            poetry --version
+            git remote -v
+            git pull && echo "Successfully pulled from the repo" 
             sh deploy/ml-pipeline.sh

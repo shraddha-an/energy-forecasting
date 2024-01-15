@@ -38,6 +38,8 @@ def run(
           A dictionary containing metadata of the pipeline.
     """
     print(f"\nCloned this repo from Paul's main ML Ops repo to test GitHub Actions CI/CD steps...\n")
+    print(f"\nDidn't configure GitHub Actions workflow before so testing GitHub Actions CI/CD steps again...\n")
+
     logger.info(f"Extracting data from API.")
     data, metadata = extract.from_file(
         export_end_reference_datetime, days_delay, days_export, url

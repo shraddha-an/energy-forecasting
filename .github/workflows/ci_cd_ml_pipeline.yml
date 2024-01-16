@@ -19,12 +19,14 @@ jobs:
   ci_cd:
     runs-on: ubuntu-latest
     steps:
+      
       - uses: 'actions/checkout@v4'
 
       - id: 'auth'
         uses: 'google-github-actions/auth@v2'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
       - id: 'compute-ssh'
         uses: 'google-github-actions/ssh-compute@v0'
         with:
@@ -33,7 +35,13 @@ jobs:
           instance_name: '${{ env.INSTANCE_NAME }}'
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-          command: >
+      
+      - name: Install and configure Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.7.1
+      
+      - command: >
             cd ~/energy-forecasting && 
             echo $HOME && echo pwd &&
             git pull && 

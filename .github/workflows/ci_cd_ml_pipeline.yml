@@ -43,6 +43,6 @@ jobs:
       
       - command: >
             cd ~/energy-forecasting && 
-            echo $HOME && echo pwd &&
+            echo $HOME && pwd &&
             git pull && 
             sh deploy/ml-pipeline.sh

@@ -36,13 +36,12 @@ jobs:
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
       
-      - name: Install and configure Poetry
+      - id: "install-poetry"
         uses: snok/install-poetry@v1
         with:
           version: 1.7.1
       
-      - command: >
-            cd ~/energy-forecasting && 
+      - run: cd ~/energy-forecasting && 
             echo $HOME && echo pwd &&
             git pull && 
             sh deploy/ml-pipeline.sh

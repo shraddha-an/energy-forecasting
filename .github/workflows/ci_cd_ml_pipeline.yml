@@ -41,7 +41,8 @@ jobs:
         with:
           version: 1.7.1
       
-      - run: cd ~/energy-forecasting && 
+      - command: >
+            cd ~/energy-forecasting && 
             echo $HOME && echo pwd &&
             git pull && 
             sh deploy/ml-pipeline.sh

@@ -34,4 +34,4 @@ jobs:
           instance_name: '${{ env.INSTANCE_NAME }}'
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-          command: echo Hello world
+          run: echo Hello world

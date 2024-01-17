@@ -34,8 +34,4 @@ jobs:
           instance_name: '${{ env.INSTANCE_NAME }}'
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
-          command: >
-            cd ~/energy-forecasting && 
-            echo $HOME && pwd && git remote -v &&
-            git pull && 
-            sh deploy/ml-pipeline.sh
+          command: 'echo Hello world'        

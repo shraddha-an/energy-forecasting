@@ -193,4 +193,6 @@ async def get_predictions(area: int, consumer_type: int) -> Any:
         "predictions_monitoring_energy_consumptionc": predictions_monitoring_energy_consumptionc,
     }
 
+    print(f"\n\nResults: {results}\n\nIn app-api/api/views.py...\n\n")
+
     return results
